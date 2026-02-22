@@ -13,7 +13,11 @@ Utilizing **K-Means Clustering**, the analysis identifies distinct creator perso
 ---
 
 ## 📂 Data & Preprocessing
-The dataset comprises creator engagement logs and spending behaviors, transformed into two core business metrics: **Engagement Index** (activity frequency) and **Monetization Maturity** (propensity to engage with paid features).
+This project utilizes the publicly available [Dataset for K-Means Clustering (Social Media Users)](https://www.kaggle.com/datasets/mitgandhi10/dataset-for-kmeans-clustering) from Kaggle. 
+
+To align with a ByteDance/short-video platform business case, the original dataset features were re-mapped to platform-specific terminology:
+* **Original `Instagram visit score` $\rightarrow$ Engagement Index:** Measures the frequency and depth of content creation/platform activity.
+* **Original `Spending_rank(0 to 100)` $\rightarrow$ Monetization Maturity:** Measures the propensity of the creator's audience to engage with paid features (e.g., TikTok Shop, Virtual Gifts).
 
 ### Preprocessing Pipeline
 1.  **Distribution & Skewness Analysis:** Evaluated feature probability distributions prior to scaling to ensure assumptions were met.

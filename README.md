@@ -8,7 +8,7 @@
 ## 📌 Abstract
 Understanding creator behavior is critical for dynamic content delivery, targeted monetization, and platform health. This project applies unsupervised machine learning techniques to segment 2,600 social media creators based on their engagement metrics and monetization maturity. 
 
-Utilizing **K-Means Clustering**, the analysis identifies distinct creator personas, providing actionable insights for product development, ad-revenue share optimization, and creator retention strategies suited for platforms like ByteDance.
+Utilizing **K-Means Clustering**, the analysis identifies distinct creator personas, providing actionable insights for product development, ad-revenue share optimization, and creator retention strategies suited for platforms like TikTok.
 
 ---
 
@@ -16,9 +16,8 @@ Utilizing **K-Means Clustering**, the analysis identifies distinct creator perso
 The dataset comprises creator engagement logs and spending behaviors, transformed into two core business metrics: **Engagement Index** (activity frequency) and **Monetization Maturity** (propensity to engage with paid features).
 
 ### Preprocessing Pipeline
-1.  **Distribution & Skewness Analysis:** Evaluated feature probability distributions prior to scaling to ensure algorithmic assumptions were met.
-2.  **Feature Scaling:** Applied `StandardScaler` to normalize variance. Because the skewness of the features was moderate, standard Z-score scaling was mathematically justified without requiring aggressive log transformations, preserving business interpretability.
-3.  **Stability Checks:** Validated data integrity by ensuring no extreme power-law outliers would artificially pull the K-Means centroids.
+1.  **Distribution & Skewness Analysis:** Evaluated feature probability distributions prior to scaling to ensure assumptions were met.
+2.  **Feature Scaling:** Applied `StandardScaler` to normalize variance. Because the skewness of the features was moderate, standard Z-score scaling was used to preserve business interpretability.
 
 ---
 
@@ -28,6 +27,8 @@ Initial exploration of the dataset highlighted the distribution of creator engag
 * **Moderate Left-Skew in Engagement (-0.41):** Indicates that while there is a healthy baseline of activity, a concentrated group of "hyper-active" creators exists.
 * **Moderate Right-Skew in Monetization (+0.55):** Indicates that spending behavior is slightly more concentrated; fewer creators have highly mature monetization habits compared to general engagement.
 * **Normality Confirmation:** QQ-Plots confirmed that both features stayed within the safe bounds (-1.0 to +1.0) for standard Euclidean distance calculations.
+
+![Distribution and QQ Plots](qq_plots.png)
 
 ---
 
@@ -39,11 +40,19 @@ The project leverages the **K-Means** algorithm to partition creators into disti
 * **Silhouette Score:** Used to validate cluster density and separation, resulting in an optimal configuration of **$k=5$** clusters.
 * **Stability Analysis:** Ran the algorithm through 50 initializations with varying random seeds. The low standard deviation of inertia across runs confirmed the clusters represent genuine behavioral segments rather than statistical noise.
 
+![Elbow Method and Silhouette Score](optimization_plots.png)
+
 ---
 
 ## 📊 Results & Cluster Personas
-The model successfully partitioned the user base into 5 distinct segments, measured by their Relative Importance (deviation from the platform average):
+The model successfully partitioned the user base into 5 distinct segments, measured by their Relative Importance (deviation from the platform average). 
 
+Below is the visualization of the defined Creator Archetypes mapped against the Engagement and Monetization axes:
+
+![Creator Segmentation Scatter Plot](cluster_plot.png)
+
+
+### Archetype Breakdown:
 | Cluster | Persona Name | Key Characteristics | Strategic Value |
 | :--- | :--- | :--- | :--- |
 | **2** | *The Power Stars* | High Engagement (+25%), Highest Monetization (+98%). | Platform "Whales." Retain via VIP support and global ad campaigns. |
@@ -60,4 +69,4 @@ The model successfully partitioned the user base into 5 distinct segments, measu
 3.  **Utilize Niche Experts for Affiliate Pilots:** Cluster 1 represents creators who don't post often but convert highly when they do. They are the ideal testing ground for new, high-trust affiliate marketing products where conversion rates matter more than top-of-funnel reach.
 
 ---
-*© 2026 Ryan Tang. Masters of Data Science Student & Market Researcher.*
+*© 2026 Ryan Tang.*

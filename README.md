@@ -1,1 +1,63 @@
-# Creator-Monetization-Archetypes
+# Creator Lifecycle & Monetization Archetypes: A K-Means Clustering Approach
+
+![Python](https://img.shields.io/badge/Python-3.9-3776AB?logo=python)
+![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?logo=scikit-learn)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+[![View Notebook](https://img.shields.io/badge/Jupyter-View_Notebook-F37626?logo=jupyter&style=flat)](Clustering.ipynb)
+
+## 📌 Abstract
+Understanding creator behavior is critical for dynamic content delivery, targeted monetization, and platform health. This project applies unsupervised machine learning techniques to segment 2,600 social media creators based on their engagement metrics and monetization maturity. 
+
+Utilizing **K-Means Clustering**, the analysis identifies distinct creator personas, providing actionable insights for product development, ad-revenue share optimization, and creator retention strategies suited for platforms like ByteDance.
+
+---
+
+## 📂 Data & Preprocessing
+The dataset comprises creator engagement logs and spending behaviors, transformed into two core business metrics: **Engagement Index** (activity frequency) and **Monetization Maturity** (propensity to engage with paid features).
+
+### Preprocessing Pipeline
+1.  **Distribution & Skewness Analysis:** Evaluated feature probability distributions prior to scaling to ensure algorithmic assumptions were met.
+2.  **Feature Scaling:** Applied `StandardScaler` to normalize variance. Because the skewness of the features was moderate, standard Z-score scaling was mathematically justified without requiring aggressive log transformations, preserving business interpretability.
+3.  **Stability Checks:** Validated data integrity by ensuring no extreme power-law outliers would artificially pull the K-Means centroids.
+
+---
+
+## 📈 Exploratory Data Analysis (EDA)
+Initial exploration of the dataset highlighted the distribution of creator engagement and monetization potential.
+
+* **Moderate Left-Skew in Engagement (-0.41):** Indicates that while there is a healthy baseline of activity, a concentrated group of "hyper-active" creators exists.
+* **Moderate Right-Skew in Monetization (+0.55):** Indicates that spending behavior is slightly more concentrated; fewer creators have highly mature monetization habits compared to general engagement.
+* **Normality Confirmation:** QQ-Plots confirmed that both features stayed within the safe bounds (-1.0 to +1.0) for standard Euclidean distance calculations.
+
+---
+
+## 🧠 Model Architecture & Methodology
+The project leverages the **K-Means** algorithm to partition creators into distinct, actionable business segments.
+
+### Hyperparameter Tuning & Validation
+* **The Elbow Method:** Evaluated Within-Cluster Sum of Squares (WCSS) across $k=2$ to $k=10$ to identify the point of diminishing returns.
+* **Silhouette Score:** Used to validate cluster density and separation, resulting in an optimal configuration of **$k=5$** clusters.
+* **Stability Analysis:** Ran the algorithm through 50 initializations with varying random seeds. The low standard deviation of inertia across runs confirmed the clusters represent genuine behavioral segments rather than statistical noise.
+
+---
+
+## 📊 Results & Cluster Personas
+The model successfully partitioned the user base into 5 distinct segments, measured by their Relative Importance (deviation from the platform average):
+
+| Cluster | Persona Name | Key Characteristics | Strategic Value |
+| :--- | :--- | :--- | :--- |
+| **2** | *The Power Stars* | High Engagement (+25%), Highest Monetization (+98%). | Platform "Whales." Retain via VIP support and global ad campaigns. |
+| **4** | *Growth Engines* | Highest Engagement (+40%), Low Monetization (-53%). | Massive traffic drivers. Prime targets for TikTok Shop/Monetization onboarding. |
+| **1** | *Niche Experts* | Low Engagement (-38%), High Monetization (+52%). | High trust, low reach. Leverage for high-intent, high-ticket affiliate marketing. |
+| **0** | *Steady Hobbyists* | Average Engagement (-5%), Low Monetization (-53%). | General population. Target with daily challenges to build engagement loops. |
+| **3** | *Inactive/Casual* | Lowest Engagement (-62%), Lowest Monetization (-41%). | Low priority. Manage via automated email flows for content creation basics. |
+
+---
+
+## 🔍 Strategic Recommendations
+1.  **Launch "First Conversion" Campaigns for Growth Engines:** Cluster 4 possesses the highest engagement on the platform but sits 53% below average in monetization. Offering a targeted, one-time incentive (e.g., 50% off first coin purchase) to this specific group yields the highest potential ROI.
+2.  **Deploy White-Glove Retention for Power Stars:** Cluster 2 drives a disproportionate amount of revenue. Shift them away from algorithmic support to dedicated human talent managers to minimize churn risk to competitor platforms.
+3.  **Utilize Niche Experts for Affiliate Pilots:** Cluster 1 represents creators who don't post often but convert highly when they do. They are the ideal testing ground for new, high-trust affiliate marketing products where conversion rates matter more than top-of-funnel reach.
+
+---
+*© 2026 Ryan Tang. Masters of Data Science Student & Market Researcher.*

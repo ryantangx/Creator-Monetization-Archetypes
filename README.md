@@ -68,9 +68,9 @@ Below is the visualization of the defined Creator Archetypes mapped against the 
 ---
 
 ## 🔍 Strategic Recommendations
-1.  **Launch "First Conversion" Campaigns for Growth Engines:** Cluster 4 possesses the highest engagement on the platform but sits 53% below average in monetization. Offering a targeted, one-time incentive (e.g., 50% off first coin purchase) to this specific group yields the highest potential ROI.
-2.  **Deploy White-Glove Retention for Power Stars:** Cluster 2 drives a disproportionate amount of revenue. Shift them away from algorithmic support to dedicated human talent managers to minimize churn risk to competitor platforms.
-3.  **Utilize Niche Experts for Affiliate Pilots:** Cluster 1 represents creators who don't post often but convert highly when they do. They are the ideal testing ground for new, high-trust affiliate marketing products where conversion rates matter more than top-of-funnel reach.
+1.  **Launch "First Conversion" Campaigns for Growth Engines:** *Growth Engines* possesses the highest engagement on the platform but sits below average in monetization. Offering a targeted, one-time incentive (e.g., 50% off first coin purchase) to this specific group may yield the highest potential ROI.
+2.  **Deploy Personalized Retention for Power Stars:** *The Power Stars* drives a disproportionate amount of revenue. Shift them away from algorithmic support to dedicated human talent managers to minimize churn risk to competitor platforms.
+3.  **Utilize Niche Experts for Affiliate Pilots:** *Niche Experts* represents creators who don't post often but convert highly when they do. They are the ideal testing ground for new, high-trust affiliate marketing products where conversion rates matter more than top-of-funnel reach.
 
 ---
 *© 2026 Ryan Tang.*

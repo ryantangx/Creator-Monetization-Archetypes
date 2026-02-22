@@ -38,7 +38,7 @@ The project leverages the **K-Means** algorithm to partition creators into disti
 ### Hyperparameter Tuning & Validation
 * **The Elbow Method:** Evaluated Within-Cluster Sum of Squares (WCSS) across $k=2$ to $k=10$ to identify the point of diminishing returns.
 * **Silhouette Score:** Used to validate cluster density and separation, resulting in an optimal configuration of **$k=5$** clusters.
-* **Stability Analysis:** Ran the algorithm through 50 initializations with varying random seeds. The low standard deviation of inertia across runs confirmed the clusters represent genuine behavioral segments rather than statistical noise.
+* **Stability Analysis:** Ran the algorithm through 10 initializations with varying random seeds to ensure the best outcome with lowest inertia across runs is chosen.
 
 ![Elbow Method and Silhouette Score](optimization_plots.png)
 
@@ -53,13 +53,13 @@ Below is the visualization of the defined Creator Archetypes mapped against the 
 
 
 ### Archetype Breakdown:
-| Cluster | Persona Name | Key Characteristics | Strategic Value |
-| :--- | :--- | :--- | :--- |
-| **2** | *The Power Stars* | High Engagement (+25%), Highest Monetization (+98%). | Platform "Whales." Retain via VIP support and global ad campaigns. |
-| **4** | *Growth Engines* | Highest Engagement (+40%), Low Monetization (-53%). | Massive traffic drivers. Prime targets for TikTok Shop/Monetization onboarding. |
-| **1** | *Niche Experts* | Low Engagement (-38%), High Monetization (+52%). | High trust, low reach. Leverage for high-intent, high-ticket affiliate marketing. |
-| **0** | *Steady Hobbyists* | Average Engagement (-5%), Low Monetization (-53%). | General population. Target with daily challenges to build engagement loops. |
-| **3** | *Inactive/Casual* | Lowest Engagement (-62%), Lowest Monetization (-41%). | Low priority. Manage via automated email flows for content creation basics. |
+| Persona Name | Key Characteristics | Strategic Value |
+| :--- | :--- | :--- |
+| *The Power Stars* | High Engagement , Highest Monetization. | Platform "Whales." Retain via VIP support and global ad campaigns. |
+| *Growth Engines* | Highest Engagement , Low Monetization. | Massive traffic drivers. Prime targets for TikTok Shop/Monetization onboarding. |
+| *Niche Experts* | Low Engagement , High Monetization . | High trust, low reach. Leverage for high-intent, high-ticket affiliate marketing. |
+| *Steady Hobbyists* | Average Engagement , Low Monetization . | General population. Target with daily challenges to build engagement loops. |
+| *Inactive/Casual* | Lowest Engagement , Lowest Monetization . | Low priority. Manage via automated email flows for content creation basics. |
 
 ---
 

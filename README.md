@@ -1,7 +1,7 @@
 # Creator Lifecycle & Monetization Archetypes: A K-Means Clustering Approach
 
 ![Python](https://img.shields.io/badge/Python-3.9-3776AB?logo=python)
-![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?logo=scikit-learn)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 [![View Notebook](https://img.shields.io/badge/Jupyter-View_Notebook-F37626?logo=jupyter&style=flat)](Clustering.ipynb)
 

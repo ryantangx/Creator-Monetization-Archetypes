@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.9-3776AB?logo=python)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?logo=scikitlearn&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
-[![View Notebook](https://img.shields.io/badge/Jupyter-View_Notebook-F37626?logo=jupyter&style=flat)](Clustering.ipynb)
+[![View Notebook](https://img.shields.io/badge/Jupyter-View_Notebook-F37626?logo=jupyter&style=flat)](creator_clustering.ipynb)
 
 ## 📌 Abstract
 Understanding creator behavior is critical for dynamic content delivery, targeted monetization, and platform health. This project applies unsupervised machine learning techniques to segment 2,600 social media creators based on their engagement metrics and monetization maturity. 
